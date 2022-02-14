@@ -1,20 +1,30 @@
 const socket = io()
-let name;
+let username;
 let textarea = document.querySelector('#textarea')
+let btn= document.querySelector('#butt')
 let messageArea = document.querySelector('.message__area')
-do {
-    name = prompt('Please enter your name: ')
-} while(!name)
 
-textarea.addEventListener('keyup', (e) => {
-    if(e.key === 'Enter') {
-        sendMessage(e.target.value)
-    }
+do {
+    username = prompt('Please enter your name: ')
+} while(!username)
+
+console.log(username);
+
+btn.addEventListener('click', () => {
+    let msg=textarea.value;
+    sendMessage(msg)
 })
+
+// textarea.addEventListener('keyup', (e) => {
+//     if(e.key === 'Enter') {
+//         // console.log(e.target.value);
+//         sendMessage(e.target.value)
+//     }
+// })
 
 function sendMessage(message) {
     let msg = {
-        user: name,
+        user: username,
         message: message.trim()
     }
     // Append 
@@ -23,6 +33,7 @@ function sendMessage(message) {
     scrollToBottom()
 
     // Send to server 
+    // yaha se ye event emit ho jayegi aur server mein ham ye event listen kar skte h
     socket.emit('message', msg)
 
 }

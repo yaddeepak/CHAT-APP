@@ -3,11 +3,12 @@ const app = express()
 const http = require('http').createServer(app)
 
 const PORT = process.env.PORT || 3000
-
+ 
 http.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })
 
+// static middleware are use to server static files to user such as css/javascript/images etc
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {

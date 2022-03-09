@@ -52,7 +52,7 @@ textarea {
 }
 .message {
     padding: 10px; 
-    border-radius: 16px; 
+    /* border-radius: 16px;  */
     margin-bottom: 32px;
     max-width: 600px;
     position: relative;
@@ -65,19 +65,19 @@ textarea {
 }
 
 .message p{
-    color: blue
+    color: rgb(232, 232, 238)
 }
 
 .incoming {
-    background: #8F8BE8;
+    background: #25208f;
     color: #fff;  
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
 }
 .outgoing {
-    background: #e9eafd;
-    color: #787986;
+    background: #1c2188;
+    color: #cdcfdf;
     margin-left: auto;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
 }
 .message h4 {
     position: absolute;
